@@ -1,0 +1,14 @@
+
+server:
+  port: 12345  # 注意，此配置将会失效。 由于boottrap.yml先启动，因此会去配置中心读取配置，读取server.port的值（数据库中）
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# 给与配置初始值
+foo: NaN
