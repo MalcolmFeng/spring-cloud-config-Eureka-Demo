@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: config-single-server  # 应用名称
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/MalcolmFF/springboot-config-temp #配置文件所在仓库
+          username: MalcolmFF #登录账号
+          password: MalcolmFeng1234 #登录密码
+          default-label: master #配置文件分支
+          search-paths: config  #配置文件所在根目录
+
+# 访问规则:
+#  /{application}/{profile}[/{label}]
+#  /{application}-{profile}.yml
+#  /{label}/{application}-{profile}.yml
+#  /{application}-{profile}.properties
+#  /{label}/{application}-{profile}.properties
+# application 代表服务名称；
+# profile代表版本dev or prod；
+# label代表git分支
+
+#  eg:
+#  http://localhost:3301/config-single-client/dev/master
+#  http://localhost:3301/config-single-client/prod
+#  http://localhost:3301/config-single-client-dev.yml
+#  http://localhost:3301/config-single-client-prod.yml
+#  http://localhost:3301/master/config-single-client-prod.yml
