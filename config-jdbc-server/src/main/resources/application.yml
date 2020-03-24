@@ -1,0 +1,28 @@
+server:
+  port: 8083
+eureka: # 配置Eureka server
+  client:
+    serviceUrl:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://test:123456@localhost:3000/eureka/
+  instance:
+    preferIpAddress: true
+
+spring:
+  application:
+    name: config-jdbc-server
+  profiles:
+    active: jdbc  # 默认为Git，如果不加此配置，会报错：If you are using the git profile, you need to set a Git URI in your configuration.
+  datasource: # 配置数据库，mysql8.0
+    url: jdbc:mysql://172.26.210.234:3306/config?useUnicode=true&characterEncoding=utf-8&useOldAliasMetadataBehavior=true&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: TjPt_hbd0313!#
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    config:
+      label: master
+      server:
+        jdbc: true
+# 查询配置的sql
+spring.cloud.config.server.jdbc.sql: SELECT key1, value1 from config_properties where APPLICATION=? and PROFILE=? and LABEL=?
