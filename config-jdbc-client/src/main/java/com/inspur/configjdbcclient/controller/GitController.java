@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 //    web:
 //      exposure:
 //        include: "*"
-
 @RefreshScope
 @RestController
 public class GitController {
@@ -26,6 +25,8 @@ public class GitController {
     // 启动后访问 注意端口不是 12345
     // http://localhost:8083/show
     // http://localhost:8083/autoShow
+    //
+    // 刷新配置文件： http://localhost:8083/actuator/refresh
 
     @Value("${foo}")
     String foo;

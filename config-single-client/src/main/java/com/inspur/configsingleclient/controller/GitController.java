@@ -30,6 +30,8 @@ public class GitController {
     // 启动后访问
     // http://localhost:3302/show
     // http://localhost:3302/autoShow
+    //
+    // 刷新配置文件： http://localhost:3302/actuator/refresh
 
     @GetMapping(value = "show")
     public Object show(){
