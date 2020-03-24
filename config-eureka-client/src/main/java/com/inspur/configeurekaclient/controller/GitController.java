@@ -28,8 +28,8 @@ public class GitController {
     private GitAutoRefreshConfig gitAutoRefreshConfig;
 
     // 启动后访问
-    // http://localhost:3302/show
-    // http://localhost:3302/autoShow
+    // http://localhost:3011/autoShow
+    // http://localhost:3011/show
 
     @GetMapping(value = "show")
     public Object show(){
