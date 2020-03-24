@@ -18,6 +18,6 @@ spring:
         git:
           uri: https://github.com/MalcolmFF/springboot-config-temp #配置文件所在仓库
           username: MalcolmFF #登录账号
-          password: MalcolmFeng1234 #登录密码
+          password: aaaaaa #登录密码
           default-label: master #配置文件分支
           search-paths: config  #配置文件所在根目录
